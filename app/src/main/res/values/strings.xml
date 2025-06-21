@@ -4,4 +4,6 @@
     <string name="about_content_description">About application</string>
     <string name="refresh_content_description">Refresh status</string>
     <string name="warning_content_description">Warning</string>
+    <string name="shortcut_long_label">Toggle SELinux Mode</string>
+    <string name="shortcut_short_label">Toggle SELinux</string>
 </resources>

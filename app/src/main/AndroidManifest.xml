@@ -12,7 +12,17 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/Theme.SelinuxStatus"
-        tools:targetApi="34">
+        tools:targetApi="35">
+
+        <meta-data
+            android:name="android.app.shortcuts"
+            android:resource="@xml/shortcuts" />
+
+        <activity
+            android:name=".ShortcutActivity"
+            android:exported="true"
+            android:theme="@style/Theme.SelinuxStatus" />
+
 
         <receiver
             android:name=".BootReceiver"

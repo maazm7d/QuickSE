@@ -105,9 +105,11 @@ fun MainScreen() {
     )
 
     if (showAboutDialog) {
-        AboutDialog(
-            versionName = versionName,
-            onDismiss = { showAboutDialog = false }
-        )
+        if (versionName != null) {
+            AboutDialog(
+                versionName = versionName,
+                onDismiss = { showAboutDialog = false }
+            )
+        }
     }
 }
