@@ -14,12 +14,14 @@ fun runCommand(command: String): String {
 }
 
 fun getSelinuxStatus(): String {
-    val result = runCommand("su -c getenforce")
-    return if (result.equals("Enforcing", true)) "Enforcing" else "Permissive"
+    val result = runCommand("su -c getenforce").trim()
+    return when {
+        result.equals("Enforcing", true) -> "Enforcing"
+        result.equals("Permissive", true) -> "Permissive"
+        else -> "Unknown"
+    }
 }
-
 fun setSelinuxMode(mode: String): Boolean {
     runCommand("su -c setenforce ${if (mode == "Enforcing") 1 else 0}")
     return getSelinuxStatus() == mode
 }
-
