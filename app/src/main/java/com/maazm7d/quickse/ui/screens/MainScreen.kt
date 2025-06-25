@@ -1,6 +1,7 @@
 package com.maazm7d.quickse.ui.screens
 
 import com.maazm7d.quickse.ui.components.ScheduledAutoToggleSwitch
+import com.maazm7d.quickse.util.UpdateChecker
 import androidx.compose.material3.Button
 import androidx.compose.material3.Text
 import android.widget.Toast
@@ -10,6 +11,7 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.runtime.setValue
 import androidx.compose.foundation.layout.safeDrawingPadding
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -107,7 +109,7 @@ fun MainScreen(navController: NavController) {
                 ScheduledAutoToggleSwitch()
 	           	KernelInfoCardButton(
                     onClick = { navController.navigate("kernel_info") }
-			)
+			)              
 
             }
         }
@@ -116,7 +118,8 @@ fun MainScreen(navController: NavController) {
     if (showAboutDialog) {
         AboutDialog(
             versionName = versionName,
-            onDismiss = { showAboutDialog = false }
+            onDismiss = { showAboutDialog = false },
+            context = context 
         )
     }
 }
