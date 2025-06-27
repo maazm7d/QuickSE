@@ -12,7 +12,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 
 @Composable
-fun AboutDialog(versionName: String, onDismiss: () -> Unit) {
+fun AboutDialog(versionName: String, onDismiss: () -> Unit, context: android.content.Context)  {
     AlertDialog(
         onDismissRequest = onDismiss,
         title = {
@@ -33,6 +33,15 @@ fun AboutDialog(versionName: String, onDismiss: () -> Unit) {
                 )
             }
         },
-        confirmButton = {}
+        confirmButton = {
+              androidx.compose.material3.TextButton(
+                onClick = {
+                    com.maazm7d.quickse.util.UpdateChecker.checkForUpdate(context)
+                }
+            ) {
+                Text("Check for Updates")
+            }
+        }
     )
 }
+
