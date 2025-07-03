@@ -71,11 +71,11 @@ dependencies {
     implementation("androidx.compose.animation:animation:1.6.4")
 
     // Material 3 — both versions intentionally kept
-    implementation("androidx.compose.material3:material3:1.2.1")
+    implementation("androidx.compose.material3:material3:1.3.2")
     implementation("androidx.compose.material:material-icons-extended")
     implementation("androidx.work:work-runtime-ktx:2.10.2")
     implementation("androidx.compose.material3:material3")
-    implementation("androidx.compose.material3:material3:1.2.1") // Explicit version
+    implementation("androidx.compose.material3:material3:1.3.2") // Explicit version
 
     // Window size class
     implementation("androidx.compose.material3:material3-window-size-class")
