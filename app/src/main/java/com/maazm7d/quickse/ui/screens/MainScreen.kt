@@ -34,7 +34,6 @@ import com.maazm7d.quickse.ui.components.AboutDialog
 import com.maazm7d.quickse.ui.components.ActionButton
 import com.maazm7d.quickse.ui.components.AppBar
 import com.maazm7d.quickse.ui.components.AutoToggleSwitch
-import com.maazm7d.quickse.ui.components.RootWarning
 import com.maazm7d.quickse.ui.components.StatusCard
 import androidx.navigation.NavController
 import kotlinx.coroutines.delay
@@ -106,7 +105,6 @@ fun MainScreen(navController: NavController) {
                     isRootAvailable = uiState.isRootAvailable,
                     onClick = { viewModel.toggleSelinuxMode() }
                 )
-                RootWarning(visible = !uiState.isRootAvailable)
                 AutoToggleSwitch()
                 ScheduledAutoToggleSwitch()
 	        KernelInfoCardButton(
