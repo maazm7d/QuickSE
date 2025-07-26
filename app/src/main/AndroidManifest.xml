@@ -24,7 +24,7 @@
         <activity
             android:name=".ShortcutActivity"
             android:exported="true"
-            android:theme="@style/Theme.SelinuxStatus" />
+            android:theme="@style/Theme.Transparent" />
 
 
         <receiver
