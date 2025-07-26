@@ -24,8 +24,8 @@ fun KernelInfoCardButton(
     Card(
         modifier = modifier
             .fillMaxWidth()
-            .padding(vertical = 12.dp, horizontal = 16.dp),
-        shape = RoundedCornerShape(16.dp),
+            .padding(vertical = 16.dp, horizontal = 12.dp),
+        shape = RoundedCornerShape(12.dp),
         border = BorderStroke(
             width = 2.dp,
             brush = Brush.linearGradient(
@@ -38,7 +38,7 @@ fun KernelInfoCardButton(
         colors = CardDefaults.cardColors(
             containerColor = MaterialTheme.colorScheme.surfaceVariant
         ),
-        elevation = CardDefaults.cardElevation(defaultElevation = 8.dp)
+        elevation = CardDefaults.cardElevation(defaultElevation = 6.dp)
     ) {
         Row(
             modifier = Modifier
@@ -48,12 +48,12 @@ fun KernelInfoCardButton(
     indication = LocalIndication.current,
     interactionSource = remember { MutableInteractionSource() }
 )
-                .padding(horizontal = 20.dp, vertical = 18.dp),
+                .padding(horizontal = 16.dp, vertical = 12.dp),
             verticalAlignment = Alignment.CenterVertically,
             horizontalArrangement = Arrangement.SpaceBetween
         ) {
             Text(
-                text = "Kernel inspector",
+                text = "Kernel information",
                 style = MaterialTheme.typography.titleMedium,
                 color = MaterialTheme.colorScheme.onSurfaceVariant
             )
