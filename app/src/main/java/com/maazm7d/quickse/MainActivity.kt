@@ -24,7 +24,6 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
 
 lifecycleScope.launch {
-    delay(3000) 
     val currentStatus = getSelinuxStatus()
     if (currentStatus == "Unknown") return@launch
 
