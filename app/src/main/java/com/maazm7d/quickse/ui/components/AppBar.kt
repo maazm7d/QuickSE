@@ -1,14 +1,19 @@
 package com.maazm7d.quickse.ui.components
 
+import androidx.compose.foundation.Image
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.size
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Info
 import androidx.compose.material.icons.filled.Refresh
 import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.semantics.semantics
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
+import com.maazm7d.quickse.R
+import androidx.compose.ui.graphics.ColorFilter
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -20,19 +25,27 @@ fun AppBar(
 ) {
     CenterAlignedTopAppBar(
         title = {
-            Text(
-                text = title,
-                style = MaterialTheme.typography.titleMedium,
-                color = MaterialTheme.colorScheme.onSurface
-            )
+            Row(
+                verticalAlignment = Alignment.CenterVertically
+            ) {
+                Image(
+                    painter = painterResource(id = R.drawable.appbar_ic),
+                    contentDescription = null,
+                    modifier = Modifier
+                        .size(35.dp),
+                            colorFilter = ColorFilter.tint(MaterialTheme.colorScheme.onSurface)
+                )
+                Text(
+                    text = title,
+                    style = MaterialTheme.typography.titleMedium,
+                    color = MaterialTheme.colorScheme.onSurface
+                )
+            }
         },
         navigationIcon = {
             IconButton(
                 onClick = onAboutClick,
-                modifier = Modifier
-                    .size(48.dp)
-                    .semantics {
-                    }
+                modifier = Modifier.size(48.dp)
             ) {
                 Icon(
                     imageVector = Icons.Default.Info,
@@ -46,10 +59,7 @@ fun AppBar(
                 onClick = {
                     if (!isRefreshing) onRefreshClick()
                 },
-                modifier = Modifier
-                    .size(48.dp)
-                    .semantics {
-                    },
+                modifier = Modifier.size(48.dp),
                 enabled = !isRefreshing
             ) {
                 if (isRefreshing) {
