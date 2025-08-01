@@ -64,7 +64,7 @@ fun IconButtonWithText(
             painter = painterResource(id = painterRes),
             contentDescription = text,
             modifier = Modifier.size(20.dp),
-            tint = Color.Unspecified
+            tint = MaterialTheme.colorScheme.onSurface
         )
         Spacer(modifier = Modifier.width(8.dp))
         Text(text)
