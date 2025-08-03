@@ -7,4 +7,13 @@
     <color name="md_theme_light_secondary">#666666</color>
     <color name="md_theme_light_onSecondary">#FFFFFF</color>
     <color name="md_theme_light_secondaryContainer">#999999</color>
+
+    <color name="md_theme_dark_primary">#FFFFFF</color>
+    <color name="md_theme_dark_onPrimary">#121212</color>
+    <color name="md_theme_dark_primaryContainer">#2C2C2C</color>
+
+    <color name="md_theme_dark_secondary">#CCCCCC</color>
+    <color name="md_theme_dark_onSecondary">#121212</color>
+    <color name="md_theme_dark_secondaryContainer">#2C2C2C</color>
 </resources>
+
