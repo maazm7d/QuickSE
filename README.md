@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/quickse_icon.png" alt="QuickSE Icon" width="100"/>
+  <img src="screenshots/quickse_icon.png" alt="QuickSE Icon" width="100"/>
 </p>
 
 <h1 align="center">⚡ QuickSE</h1>
@@ -22,6 +22,27 @@
 **QuickSE** is a lightweight, open-source Android app that allows rooted users to **view**, **toggle**, and **automatically set** SELinux mode between **Enforcing** and **Permissive**, all in a modern Material You interface.  
 
 Built with **Jetpack Compose** and **Kotlin**, it offers a fast, clean, and intuitive experience with just the essential tools you need.
+
+---
+
+<h2 align="center">📸 Screenshots</h2>
+
+<div align="center">
+  <table>
+    <tr>
+      <td align="center">
+        <b>🌞 Light Mode</b><br>
+        <img src="screenshots/light1.jpg" alt="Light Mode 1" width="200"/><br>
+        <img src="screenshots/light2.jpg" alt="Light Mode 2" width="200"/>
+      </td>
+      <td align="center" style="padding-left: 40px;">
+        <b>🌙 Dark Mode</b><br>
+        <img src="screenshots/dark1.jpg" alt="Dark Mode 1" width="200"/><br>
+        <img src="screenshots/dark2.jpg" alt="Dark Mode 2" width="200"/>
+      </td>
+    </tr>
+  </table>
+</div>
 
 ---
 
