@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="screenshots/quickse_icon.png" alt="QuickSE Icon" width="100"/>
+  <img src="metadata/en-US/images/icon.png" alt="QuickSE Icon" width="100"/>
 </p>
 
 <h1 align="center">⚡ QuickSE</h1>

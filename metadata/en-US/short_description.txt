@@ -1,0 +1,1 @@
+QuickSE lets rooted Android users view and change SELinux mode easily.
