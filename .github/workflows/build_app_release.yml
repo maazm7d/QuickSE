@@ -10,12 +10,20 @@ jobs:
     steps:
     - name: Checkout Code
       uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
 
     - name: Set up JDK 17
       uses: actions/setup-java@v4
       with:
         java-version: 17
         distribution: 'temurin'
+
+    - name: Checkout Latest Git Tag
+      run: |
+        LATEST_TAG=$(git describe --tags `git rev-list --tags --max-count=1`)
+        echo "Checking out latest tag: $LATEST_TAG"
+        git checkout $LATEST_TAG
 
     - name: Decode Keystore
       run: |
