@@ -1,1 +1,0 @@
-QuickSE is a simple and open-source Android app designed for rooted devices. It allows users to easily check and toggle the SELinux mode between Enforcing and Permissive. The app also supports automatic SELinux switching after a reboot and lets you schedule mode switching at a chosen time.

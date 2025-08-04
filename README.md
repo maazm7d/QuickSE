@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="metadata/en-US/images/icon.png" alt="QuickSE Icon" width="100"/>
+  <img src="fastlane/metadata/android/en-US/images/icon.png" alt="QuickSE Icon" width="100"/>
 </p>
 
 <h1 align="center">⚡ QuickSE</h1>
