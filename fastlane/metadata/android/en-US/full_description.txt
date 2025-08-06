@@ -1,26 +1,26 @@
 QuickSE is a lightweight and open-source Android utility for rooted devices that helps you manage SELinux mode with ease.
 
+<b>Core Features:</b>
 
-Core Features:
-• Instantly view the current SELinux status.
-• Toggle SELinux mode between Enforcing and Permissive.
-• Enable Auto-toggle on boot to apply your preferred SELinux mode automatically after restarting.
-• Schedule automatic SELinux mode changes at a specific time.
-• Get notified whenever SELinux mode changes occur.
+* Instantly view the current SELinux status.
+* Toggle SELinux mode between Enforcing and Permissive.
+* Enable Auto-toggle on boot to apply your preferred SELinux mode automatically after restarting.
+* Schedule automatic SELinux mode changes at a specific time.
+* Get notified whenever SELinux mode changes occur.
 
 
-Kernel Inspector:
+<b>Kernel Inspector:</b>
 Access low-level device info from /proc and other system files:
-• Kernel information
-• Loaded kernel modules
-• Kernel symbols
-• Kernel configuration
-• System uptime
-• System load average
-• CPU information 
-• Memory information 
-• Kernel logs 
 
+* Kernel information
+* Loaded kernel modules
+* Kernel symbols
+* Kernel configuration
+* System uptime
+* System load average
+* CPU information
+* Memory information
+* Kernel logs
 
-Built entirely with Jetpack Compose and Material3. 
+Built entirely with Jetpack Compose and Material3.
 Contributions, forks, and feedback are welcome.
