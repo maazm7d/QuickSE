@@ -10,6 +10,18 @@
 </p>
 
 <p align="center">
+  <a href="https://github.com/maazm7d/QuickSE/releases/latest/download/app-release.apk">
+    <img src="https://raw.githubusercontent.com/NeoApplications/Neo-Backup/034b226cea5c1b30eb4f6a6f313e4dadcbb0ece4/badge_github.png" alt="Get it on GitHub" height="80"/>
+  </a>
+  <a href="https://f-droid.org/packages/com.maazm7d.quickse/">
+    <img src="https://fdroid.gitlab.io/artwork/badge/get-it-on.png" alt="Get it on F-Droid" height="80"/>
+  </a>
+  <a href="https://apt.izzysoft.de/fdroid/index/apk/com.maazm7d.quickse">
+    <img src="https://codeberg.org/IzzyOnDroid/repo/raw/commit/9873f08e282332a231e64d9729f810f427a521e4/assets/IzzyOnDroid.png" alt="Get it on IzzySoft" height="80"/>
+  </a>
+</p>
+
+<p align="center">
   <img src="https://img.shields.io/github/stars/maazm7d/QuickSE?style=for-the-badge"/>
   <img src="https://img.shields.io/github/forks/maazm7d/QuickSE?style=for-the-badge"/>
   <img src="https://img.shields.io/github/license/maazm7d/QuickSE?style=for-the-badge"/>
@@ -33,12 +45,6 @@ Built with **Jetpack Compose** and **Kotlin**, it offers a fast, clean, and intu
 ---
 
 > SELinux mode resets on reboot unless you enable auto-toggle.
-
----
-
-## Download
-
-- [**Download Latest APK**](https://github.com/maazm7d/QuickSE/releases)
 
 ---
 
