@@ -18,6 +18,8 @@ import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.*
 import java.io.*
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.withContext
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -29,7 +31,7 @@ fun KernelInfoScreen() {
         "Kernel Information" to readShell("uname -a"),
         "Kernel Version" to readFile("/proc/version"),
         "Loaded Kernel Modules" to readModules(),
-        "Kernel Symbols" to readFile("/proc/kallsyms"),
+        "Kernel Symbols" to "Tap to load kernel symbols...",
         "Kernel Configuration" to readShell("zcat /proc/config.gz"),
         "System Uptime" to systemUptime(readFile("/proc/uptime")),
         "System Load Average" to systemLoadAvg(readFile("/proc/loadavg")),
@@ -84,20 +86,32 @@ fun KernelInfoScreen() {
 
 @Composable
 fun ExpandableKernelCard(title: String, fullText: String, context: Context) {
-    val isExpandable = fullText.lineCount() > 5
-    val previewText = fullText.lineSequence().take(5).joinToString("\n")
+    val isExpandable = title == "Kernel Symbols" || fullText.lineCount() > 5
+    var content by remember { mutableStateOf(fullText) }
+    var expanded by remember { mutableStateOf(false) }
+    var loading by remember { mutableStateOf(false) }
     val search = LocalSearchQuery.current
 
-    val matchesInHidden = isExpandable && search.isNotBlank()
-            && !previewText.contains(search, true)
-            && fullText.contains(search, true)
-
-    var expanded by remember(fullText, search) { mutableStateOf(matchesInHidden) }
+    LaunchedEffect(expanded) {
+        if (expanded && title == "Kernel Symbols" && content.startsWith("Tap to load")) {
+            loading = true
+            withContext(Dispatchers.IO) {
+                try {
+                    val lines = File("/proc/kallsyms")
+                        .useLines { it.take(200).joinToString("\n") }
+                    content = lines + "\n... [Truncated]"
+                } catch (e: Exception) {
+                    content = "⚠️ Unable to read: ${e.message}"
+                }
+            }
+            loading = false
+        }
+    }
 
     val displayText = when {
-        !isExpandable -> fullText
-        expanded      -> fullText
-        else          -> "$previewText\n..."
+        loading -> "Loading..."
+        expanded -> content
+        else -> content.lineSequence().take(5).joinToString("\n") + "\n..."
     }
 
     val highlightedText = remember(displayText, search) {
@@ -109,7 +123,7 @@ fun ExpandableKernelCard(title: String, fullText: String, context: Context) {
             .fillMaxWidth()
             .padding(vertical = 8.dp)
             .clickable(enabled = isExpandable) {
-                if (isExpandable) expanded = !expanded
+                expanded = !expanded
             },
         colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surfaceVariant)
     ) {
@@ -121,23 +135,11 @@ fun ExpandableKernelCard(title: String, fullText: String, context: Context) {
             ) {
                 Text(title, style = MaterialTheme.typography.titleMedium, fontFamily = FontFamily.Monospace)
                 Row {
-                    IconButton(onClick = {
-                        copyToClipboard(context, title, fullText)
-                    }) {
+                    IconButton(onClick = { copyToClipboard(context, title, content) }) {
                         Icon(Icons.Default.ContentCopy, contentDescription = "Copy")
                     }
-                    IconButton(onClick = {
-                        saveToFile(context, title, fullText)
-                    }) {
+                    IconButton(onClick = { saveToFile(context, title, content) }) {
                         Icon(Icons.Default.Save, contentDescription = "Save")
-                    }
-                    if (isExpandable) {
-                        IconButton(onClick = { expanded = !expanded }) {
-                            Icon(
-                                if (expanded) Icons.Default.KeyboardArrowUp else Icons.Default.KeyboardArrowDown,
-                                contentDescription = if (expanded) "Collapse" else "Expand"
-                            )
-                        }
                     }
                 }
             }
@@ -153,6 +155,7 @@ fun ExpandableKernelCard(title: String, fullText: String, context: Context) {
         }
     }
 }
+
 
 fun systemUptime(raw: String): String {
     return try {
