@@ -11,8 +11,8 @@ android {
         applicationId = "com.maazm7d.quickse"
         minSdk = 25
         targetSdk = 36
-        versionCode = 5
-        versionName = "5.1.1"
+        versionCode = 6
+        versionName = "5.1.3"
     }
 
     signingConfigs {
