@@ -1,0 +1,4 @@
+Fixed ANR in Kernel Symbols section
+Updated app screenshots
+Added feature graphic
+Dependency updates (Compose, Core-KTX)
