@@ -19,6 +19,9 @@
   <a href="https://apt.izzysoft.de/fdroid/index/apk/com.maazm7d.quickse">
     <img src="https://codeberg.org/IzzyOnDroid/repo/raw/commit/9873f08e282332a231e64d9729f810f427a521e4/assets/IzzyOnDroid.png" alt="Get it on IzzySoft" height="80"/>
   </a>
+  <a href="https://www.openapk.net/quickse/com.maazm7d.quickse/">
+    <img src="https://www.openapk.net/images/openapk-badge.png" alt="Get it on OpenAPK" height="80"/>
+  </a>
 </p>
 
 <p align="center">
