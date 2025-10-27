@@ -48,7 +48,7 @@ jobs:
 
       - name: Upload Debug APK
         if: ${{ env.BUILD_STATUS == 'success' }}
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         with:
           name: app-debug.apk
           path: app/build/outputs/apk/debug/app-debug.apk

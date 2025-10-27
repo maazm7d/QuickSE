@@ -43,7 +43,7 @@ jobs:
       run: ./gradlew assembleRelease
 
     - name: Upload APK Artifact
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@v5
       with:
         name: quickse-apk
         path: app/build/outputs/apk/release/*.apk
